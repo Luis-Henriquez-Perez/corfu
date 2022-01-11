@@ -78,8 +78,7 @@
       (dolist (c cands)
 	(dolist (s c)
 	  (push )))
-      (setq cands result))
-    (apply orig-fn cands)))
+      (apply orig-fn (reverse result)))))
 
 ;; (defun corfu-quick--read ()
 ;;   "Read quick key given FIRST pressed key."
