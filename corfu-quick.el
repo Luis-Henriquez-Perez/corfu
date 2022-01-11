@@ -72,7 +72,7 @@
   (let* ((fst (length corfu-quick1))
          (snd (length corfu-quick2))
          (len (+ fst snd)))
-    (cl-loop for c in cands collect
-	     (cl-loop for s in c collect
-		      (concat s)))
+    (setq cands (cl-loop for c in cands collect
+			 (cl-loop for s in c collect
+				  (concat s))))
     (apply orig-fn cands)))
