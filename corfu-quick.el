@@ -69,7 +69,7 @@
 
 (defun corfu-quick--format-candidate (orig cands)
   "Format candidate, see `corfu--format-candidate' for arguments."
-  (let* ((fst (length corfu-quick1))
+  (let* (( (length corfu-quick1))
          (snd (length corfu-quick2))
          (len (+ fst snd)))
     (let (result)
