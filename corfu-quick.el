@@ -26,7 +26,7 @@
 
 ;;; Commentary:
 
-;; This package is a Corfu extension, which provides quick keys.
+;; This package is a corfu extension, which provides quick keys.
 
 ;;; Code:
 
