@@ -73,20 +73,4 @@
          (snd (length corfu-quick2))
          (len (+ fst snd))
          (idx (- index start))
-         (keys (if (>= idx fst)
-                   (let ((first (elt corfu-quick2 (mod (/ (- idx fst) len) snd)))
-                         (second (elt (concat corfu-quick1 corfu-quick2) (mod (- idx fst) len))))
-                     (cond
-                      ((eq first corfu-quick--first)
-                       (push (cons second index) corfu-quick--list)
-                       (concat " " (propertize (char-to-string second) 'face 'corfu-quick1)))
-                      (corfu-quick--first "  ")
-                      (t
-                       (push (cons first (list first)) corfu-quick--list)
-                       (concat (propertize (char-to-string first) 'face 'corfu-quick1)
-                               (propertize (char-to-string second) 'face 'corfu-quick2)))))
-                 (let ((first (elt corfu-quick1 (mod idx fst))))
-                   (if corfu-quick--first
-                       "  "
-                     (push (cons first index) corfu-quick--list)
-                     (concat (propertize (char-to-string first) 'face 'corfu-quick1) " "))))))))
+         )))
