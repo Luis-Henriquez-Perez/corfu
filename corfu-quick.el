@@ -32,6 +32,10 @@
 
 ;; Taken directly from `corfu'.
 
+(eval-when-compile
+  (require 'cl-lib)
+  (require 'subr-x))
+
 (defcustom corfu-quick1 "asdfgh"
   "Single level quick keys."
   :type 'string
