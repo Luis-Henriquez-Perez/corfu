@@ -68,6 +68,7 @@
 (defvar-local corfu-quick--first nil)
 
 ;; Is it possible to use `avy' for this?
+;; In theory I can just prepend the letters to the candidates.
 (defun corfu-quick--format-candidate (orig cands)
   "Format candidate, see `corfu--format-candidate' for arguments."
   (let* ((l (length corfu-quick1))
