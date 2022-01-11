@@ -67,9 +67,9 @@
 (defvar-local corfu-quick--list nil)
 (defvar-local corfu-quick--first nil)
 
-(defun corfu-quick--format-candidate (orig)
+(defun corfu-quick--format-candidate (orig cands)
   "Format candidate, see `corfu--format-candidate' for arguments."
   (let* ((fst (length corfu-quick1))
          (snd (length corfu-quick2))
-         (len (+ fst snd))
-         (apply orig-fn ))))
+         (len (+ fst snd)))
+    (apply orig-fn cands)))
