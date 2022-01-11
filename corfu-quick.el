@@ -77,5 +77,5 @@
 				  (concat s))))
     (apply orig-fn cands)))
 
-(defun corfu-quick-read ()
+(defun corfu-quick--read ()
   )
