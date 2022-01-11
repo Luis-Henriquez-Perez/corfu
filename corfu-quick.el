@@ -42,6 +42,9 @@
   :type 'string
   :group 'corfu)
 
+(defvar-local vertico-quick--list nil)
+(defvar-local vertico-quick--first nil)
+
 (defun corfu-quick--format-candidate (orig)
   "Format candidate, see `corfu--format-candidate' for arguments."
   (let* ((fst (length corfu-quick1))
