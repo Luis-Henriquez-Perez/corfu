@@ -76,3 +76,6 @@
 			 (cl-loop for s in c collect
 				  (concat s))))
     (apply orig-fn cands)))
+
+(defun corfu-quick-read ()
+  )
