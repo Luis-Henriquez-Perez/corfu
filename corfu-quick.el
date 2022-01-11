@@ -42,7 +42,7 @@
   :type 'string
   :group 'corfu)
 
-(defun corfu-quick--format-candidate (orig cand prefix suffix index start)
+(defun corfu-quick--format-candidate (orig)
   "Format candidate, see `corfu--format-candidate' for arguments."
   (let* ((fst (length corfu-quick1))
          (snd (length corfu-quick2))
