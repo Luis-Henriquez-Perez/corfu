@@ -29,3 +29,15 @@
 ;; This package is a Corfu extension, which provides quick keys.
 
 ;;; Code:
+
+;; Taken directly from `vertico'.
+
+(defcustom corfu-quick1 "asdfgh"
+  "Single level quick keys."
+  :type 'string
+  :group 'corfu)
+
+(defcustom corfu-quick2 "jkl"
+  "Two level quick keys."
+  :type 'string
+  :group 'corfu)
