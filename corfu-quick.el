@@ -67,6 +67,7 @@
 (defvar-local corfu-quick--list nil)
 (defvar-local corfu-quick--first nil)
 
+;; Is it possible to use `avy' for this?
 (defun corfu-quick--format-candidate (orig cands)
   "Format candidate, see `corfu--format-candidate' for arguments."
   (let* ((l (length corfu-quick1))
