@@ -74,5 +74,5 @@
          (len (+ fst snd)))
     (cl-loop for c in cands collect
 	     (cl-loop for s in c collect
-		      ()))
+		      (concat s)))
     (apply orig-fn cands)))
