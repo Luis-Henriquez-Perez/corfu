@@ -71,7 +71,11 @@
   "Format candidate, see `corfu--format-candidate' for arguments."
   (let* ((fst (length corfu-quick1))
          (snd (length corfu-quick2))
-         (len (+ fst snd)))
+         (len (+ fst snd))
+	 (result))
+    (dolist (c cands)
+      (dolist (s c)
+	(push )))
     (setq cands (cl-loop for c in cands collect
 			 (cl-loop for s in c collect
 				  (concat s))))
