@@ -72,5 +72,4 @@
   (let* ((fst (length corfu-quick1))
          (snd (length corfu-quick2))
          (len (+ fst snd))
-         (idx (- index start))
          )))
