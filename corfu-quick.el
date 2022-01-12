@@ -75,7 +75,8 @@
 ;; In theory I can just prepend the letters to the candidates.
 (defun corfu-quick--format-candidate (orig cands)
   "Format candidate, see `corfu--format-candidate' for arguments."
-  (let ((updated-cands))
+  (let ((updated-cands)
+	(quick-letters))
     (dolist (c cands)
       (let (c-result)
 	(dolist (s c)
