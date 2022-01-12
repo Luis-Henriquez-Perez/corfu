@@ -75,18 +75,15 @@
 ;; Is it possible to use `avy' for this?
 ;; In theory I can just prepend the letters to the candidates and then
 ;; `corfu--format-candidates' will take care of the rest.
-(defun corfu-quick--format-candidate (orig cands)
+(defun corfu-quick--format-candidate (orig candidates)
   "Format candidate, see `corfu--format-candidate' for arguments."
   ;; Candidates are a nested list of string triples.
   (let ((updated-cands)
 	(quick-letters)
 	(quick-keys1)
 	(quick-keys2))
-    (dolist (c cands)
-      (let (c-result)
-	(dolist (s c)
-	  (push (concat quick-letters " " s) c-result))
-	(push (reverse c-result) updated-cands)))
+    (dolist (candidate candidates)
+      ())
     (apply orig (reverse updated-cands))))
 
 ;;;###autoload
