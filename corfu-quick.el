@@ -69,8 +69,8 @@
 
 (defun corfu-quick--letters (start keys1 keys2)
   "Return string of propertized quick keys."
-  (concat (propertize (char-to-string first) 'face 'vertico-quick1)
-          (propertize (char-to-string second) 'face 'vertico-quick2))
+  (concat (propertize (char-to-string first) 'face 'corfu-quick1)
+          (propertize (char-to-string second) 'face 'corfu-quick2))
   (list (propertize (char-to-string key1))
 	(propertize (char-to-string key2))))
 
