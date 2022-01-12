@@ -83,7 +83,7 @@
       (apply orig (reverse cands-result)))))
 
 (defun corfu--quick-jump ()
-  "")
+  "Jump to candidate using quick-keys.")
 
 ;; (defun corfu-quick--read ()
 ;;   "Read quick key given FIRST pressed key."
