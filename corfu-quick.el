@@ -83,7 +83,8 @@
       ;; Update the prefix.
       (setf (nth 1 candidate) (concat quick-letter " " (nth 1 candidate)))
       (push candidate updated-candidates))
-    (apply orig (reverse updated-candidates))))
+    (cl-callf reverse updated-candidates)
+    (apply orig updated-candidates)))
 
 ;;;###autoload
 (defun corfu-quick-jump ()
