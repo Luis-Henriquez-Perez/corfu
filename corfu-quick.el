@@ -82,7 +82,7 @@
     (dolist (candidate candidates)
       (setf (nth 1 candidate) (concat quick-letter " " prefix))
       (push candidate updated-candidates))
-    (apply orig (nreverse updated-candidates))))
+    (apply orig (reverse updated-candidates))))
 
 ;;;###autoload
 (defun corfu-quick-jump ()
