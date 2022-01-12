@@ -115,6 +115,8 @@
 	     (new-fn (apply-partially #'corfu-quick--format-candidates old-fn))
 	     ((symbol-function #'corfu--format-candidates) new-fn))
     (message "RESETTING")
+    (corfu--update)
+    (corfu--setup)
     1
     ;; (alist-get (read-key) corfu-quick--list)
     ))
