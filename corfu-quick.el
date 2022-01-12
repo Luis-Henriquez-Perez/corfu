@@ -68,7 +68,7 @@
 (defvar-local corfu-quick--first nil)
 
 (defun corfu-quick--letters ()
-  "Return")
+  "Return string of propertized quick keys.")
 
 ;; Is it possible to use `avy' for this?
 ;; In theory I can just prepend the letters to the candidates.
