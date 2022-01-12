@@ -79,8 +79,8 @@
   "Format candidate, see `corfu--format-candidate' for arguments."
   ;; Candidates are a nested list of string triples.
   (let ((updated-candidates))
-    (pcase-dolist (`(,candidate ,prefix ,suffix) ,whole candidates)
-      (push (list candidate (concat )))
+    (dolist (candidate candidates)
+      (push ())
       (push () updated-candidates))
     (apply orig (reverse updated-cands))))
 
