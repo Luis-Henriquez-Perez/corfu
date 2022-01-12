@@ -83,6 +83,7 @@
 	(quick-letter nil))
     (dolist (candidate candidates)
       ;; Update the prefix.
+      (setq quick-letter (corfu-quick--letters quick-letter-index ))
       (setf (nth 1 candidate) (concat quick-letter " " (nth 1 candidate)))
       (push candidate updated-candidates)
       (cl-incf quick-letter-index))
