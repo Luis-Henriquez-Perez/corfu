@@ -102,13 +102,14 @@
 	(quick-letter-index 0)
 	(quick-letters nil))
     (cl-mapcar (lambda (candidate quick-letters))
+	       candidates
+	       (quick-letters )
 	       )
     (dolist (candidate candidates)
       ;; Update the prefix.
       (setq quick-letters (corfu-quick--letters quick-letter-index))
       (setf (nth 1 candidate) (concat quick-letters " " (nth 1 candidate)))
-      (push candidate updated-candidates)
-      (cl-incf quick-letter-index))
+      (push candidate updated-candidates))
     (cl-callf reverse updated-candidates)
     (apply orig updated-candidates)))
 
