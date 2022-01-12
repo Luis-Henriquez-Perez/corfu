@@ -98,6 +98,8 @@
 ;; Is it possible to use `avy' for this?
 ;; In theory I can just prepend the letters to the candidates and then
 ;; `corfu--format-candidates' will take care of the rest.
+;; One difference from this and its counterpart in `vertico' is that vertico
+;; only formats one candidate at a time.
 (defun corfu-quick--format-candidates (orig candidates)
   "Format candidate, see `corfu--format-candidate' for arguments."
   ;; Candidates are of the form ((candidate1 prefix1 suffix1)...).
