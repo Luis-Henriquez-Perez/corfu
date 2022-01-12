@@ -80,6 +80,7 @@
   ;; Candidates are a nested list of string triples.
   (let ((updated-candidates))
     (dolist (candidate candidates)
+      ;; Update the prefix.
       (setf (nth 1 candidate) (concat quick-letter " " (nth 1 candidate)))
       (push candidate updated-candidates))
     (apply orig (reverse updated-candidates))))
