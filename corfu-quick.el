@@ -77,8 +77,9 @@
     (let (cands-result)
       (dolist (c cands)
 	(let (c-result)
-	  (dolist (string c))
-	  (push (concat letter " " string) c-result))))))
+	  (dolist (string c)
+	    (push (concat letter " " string) c-result))
+	  (push (reverse c-result) cands-result))))))
 
 ;; (defun corfu-quick--read ()
 ;;   "Read quick key given FIRST pressed key."
