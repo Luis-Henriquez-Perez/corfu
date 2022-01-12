@@ -109,6 +109,16 @@
     (cl-callf reverse updated-candidates)
     (apply orig updated-candidates)))
 
+(defun corfu-quick--read ()
+  "Read quick key given FIRST pressed key."
+  (cl-letf (((symbol-function #'corfu--format-candidate)
+             (apply-partially #'corfu-quick--format-candidate
+                              (symbol-function #'corfu--format-candidate)))
+            (corfu-quick--first first)
+            (corfu-quick--list))
+    (corfu--exhibit)
+    (alist-get (read-key) corfu-quick--list)))
+
 ;;;###autoload
 (defun corfu-quick-jump ()
   "Jump to candidate using quick-keys."
@@ -119,12 +129,3 @@
       (when (consp idx) (setq idx (corfu-quick--read (car idx))))
       (when idx (setq corfu--index idx)))))
 
-(defun corfu-quick--read ()
-  "Read quick key given FIRST pressed key."
-  (cl-letf (((symbol-function #'corfu--format-candidate)
-             (apply-partially #'corfu-quick--format-candidate
-                              (symbol-function #'corfu--format-candidate)))
-            (corfu-quick--first first)
-            (corfu-quick--list))
-    (corfu--exhibit)
-    (alist-get (read-key) corfu-quick--list)))
