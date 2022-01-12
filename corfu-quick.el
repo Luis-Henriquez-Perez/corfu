@@ -117,8 +117,7 @@
       (and (message "No match") nil)
     (let ((idx (corfu-quick--read)))
       (when (consp idx) (setq idx (corfu-quick--read (car idx))))
-      (when idx (setq corfu--index idx))))
-  )
+      (when idx (setq corfu--index idx)))))
 
 (defun corfu-quick--read ()
   "Read quick key given FIRST pressed key."
