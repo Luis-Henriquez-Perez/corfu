@@ -117,7 +117,8 @@
              (apply-partially #'corfu-quick--format-candidate
                               (symbol-function #'corfu--format-candidate))))
     (if (zerop corfu--total)
-	(and (message "No match") nil))
+	(and (message "No match") nil)
+      )
     (alist-get (read-key) corfu-quick--list)))
 
 ;; (defun corfu-quick--read ()
