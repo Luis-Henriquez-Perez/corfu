@@ -82,11 +82,11 @@
   ;; Candidates are of the form ((candidate1 prefix1 suffix1)...).
   (let ((updated-candidates nil)
 	(quick-letter-index 0)
-	(quick-letter nil))
+	(quick-letters nil))
     (dolist (candidate candidates)
       ;; Update the prefix.
       (setq quick-letter (corfu-quick--letters quick-letter-index))
-      (setf (nth 1 candidate) (concat quick-letter " " (nth 1 candidate)))
+      (setf (nth 1 candidate) (concat quick-letters " " (nth 1 candidate)))
       (push candidate updated-candidates)
       (cl-incf quick-letter-index))
     (cl-callf reverse updated-candidates)
