@@ -64,8 +64,9 @@
   "Face used for the second quick key."
   :group 'corfu-faces)
 
-;; (defvar-local corfu-quick--list nil)
-;; (defvar-local corfu-quick--first nil)
+(defvar-local corfu-quick--list nil
+  "An alist whose elements are (quick-key . index).")
+(defvar-local corfu-quick--first nil)
 
 (defun corfu-quick--letters ()
   "Return string of propertized quick keys."
