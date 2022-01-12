@@ -69,10 +69,28 @@
 
 (defun corfu-quick--letters (start keys1 keys2)
   "Return string of propertized quick keys."
-  (concat (propertize (char-to-string first) 'face 'corfu-quick1)
-          (propertize (char-to-string second) 'face 'corfu-quick2))
-  (list (propertize (char-to-string key1))
-	(propertize (char-to-string key2))))
+  (let* ((fst (length vertico-quick1))
+         (snd (length vertico-quick2))
+         (len (+ fst snd))
+         (idx (- index start)))
+    (if (>= idx fst)
+        (let ((first (elt vertico-quick2 (mod (/ (- idx fst) len) snd)))
+              (second (elt (concat vertico-quick1 vertico-quick2) (mod (- idx fst) len))))
+          (cond
+           ((eq first vertico-quick--first)
+            (push (cons second index) vertico-quick--list)
+            (concat " " (propertize (char-to-string second) 'face 'vertico-quick1)))
+           (vertico-quick--first "  ")
+           (t
+            (push (cons first (list first)) vertico-quick--list)
+            (concat (propertize (char-to-string first) 'face 'vertico-quick1)
+                    (propertize (char-to-string second) 'face 'vertico-quick2)))))
+      (let ((first (elt vertico-quick1 (mod idx fst))))
+        (if vertico-quick--first
+            "  "
+          (push (cons first index) vertico-quick--list)
+          (concat (propertize (char-to-string first) 'face
+			      'vertico-quick1) " "))))))
 
 ;; Is it possible to use `avy' for this?
 ;; In theory I can just prepend the letters to the candidates and then
