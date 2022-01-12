@@ -74,7 +74,9 @@
   (let* ((l (length corfu-quick1))
          (snd (length corfu-quick2))
          (len (+ fst snd)))
-    (cl-loop for )))
+    (cl-loop for c in cands collect
+	     (cl-loop for s in c collect
+		      (concat )))))
 
 ;; (defun corfu-quick--read ()
 ;;   "Read quick key given FIRST pressed key."
