@@ -67,7 +67,7 @@
 (defvar-local corfu-quick--list nil)
 (defvar-local corfu-quick--first nil)
 
-(defun corfu-quick--letters (start)
+(defun corfu-quick--letters (start index)
   "Return string of propertized quick keys."
   (let* ((fst (length corfu-quick1))
          (snd (length corfu-quick2))
