@@ -125,6 +125,7 @@
 (defun corfu-quick-jump ()
   "Jump to candidate using quick-keys."
   (interactive)
+  (message "calling...")
   (if (zerop corfu--total)
       (and (message "No match") nil)
     (let ((idx (corfu-quick--read)))
