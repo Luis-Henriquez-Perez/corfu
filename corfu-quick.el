@@ -110,7 +110,7 @@
       (setq prefix (concat quick-letters " " prefix))
       (push (list candidate prefix suffix) updated-candidates))
     (cl-callf reverse updated-candidates)
-    (apply orig updated-candidates)))
+    (funcall orig updated-candidates)))
 
 (defun corfu-quick--read ()
   "Read quick key given FIRST pressed key."
