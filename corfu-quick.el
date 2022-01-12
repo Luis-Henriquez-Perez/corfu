@@ -84,12 +84,12 @@
 
 (defun corfu--quick-jump ()
   "Jump to candidate using quick-keys."
-  (cl-letf (((symbol-function #'vertico--format-candidate)
-             (apply-partially #'vertico-quick--format-candidate
-                              (symbol-function #'vertico--format-candidate)))
-            (vertico-quick--first first)
-            (vertico-quick--list))
-    (alist-get (read-key) vertico-quick--list)))
+  (cl-letf (((symbol-function #'corfu--format-candidate)
+             (apply-partially #'corfu-quick--format-candidate
+                              (symbol-function #'corfu--format-candidate)))
+            (corfu-quick--first first)
+            (corfu-quick--list))
+    (alist-get (read-key) corfu-quick--list)))
 
 ;; (defun corfu-quick--read ()
 ;;   "Read quick key given FIRST pressed key."
