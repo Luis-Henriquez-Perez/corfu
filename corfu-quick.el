@@ -80,7 +80,7 @@
   ;; Candidates are a nested list of string triples.
   (let ((updated-candidates))
     (pcase-dolist (`(,candidate ,prefix ,suffix) ,whole candidates)
-      (push ())
+      (push (list candidate (concat )))
       (push () updated-candidates))
     (apply orig (reverse updated-cands))))
 
