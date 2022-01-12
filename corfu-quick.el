@@ -116,7 +116,6 @@
   (cl-letf* ((old-fn (symbol-function #'corfu--format-candidate))
 	     (new-fn (apply-partially #'corfu-quick--format-candidate old-fn))
 	     ((symbol-function #'corfu--format-candidate) new-fn))
-    (alist-get (read-key) corfu-quick--list)
     (if (zerop corfu--total)
 	(and (message "No match") nil)
       (let ((idx (corfu-quick--read)))
