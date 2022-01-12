@@ -113,9 +113,9 @@
 (defun corfu-quick-jump ()
   "Jump to candidate using quick-keys."
   (interactive)
-  (cl-letf (((symbol-function #'corfu--format-candidate)
-             (apply-partially #'corfu-quick--format-candidate
-                              (symbol-function #'corfu--format-candidate))))
+  (cl-letf* (((symbol-function #'corfu--format-candidate)
+	      (apply-partially #'corfu-quick--format-candidate
+			       (symbol-function #'corfu--format-candidate))))
     (alist-get (read-key) corfu-quick--list)
     (if (zerop corfu--total)
 	(and (message "No match") nil)
