@@ -95,7 +95,7 @@
 ;; Is it possible to use `avy' for this?
 ;; In theory I can just prepend the letters to the candidates and then
 ;; `corfu--format-candidates' will take care of the rest.
-(defun corfu-quick--format-candidate (orig candidates)
+(defun corfu-quick--format-candidates (orig candidates)
   "Format candidate, see `corfu--format-candidate' for arguments."
   ;; Candidates are of the form ((candidate1 prefix1 suffix1)...).
   (let ((updated-candidates nil)
