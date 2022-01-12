@@ -102,7 +102,6 @@
 ;; only formats one candidate at a time.
 (defun corfu-quick--format-candidates (orig candidates)
   "Format candidate, see `corfu--format-candidate' for arguments."
-  (message "HOO")
   (let ((updated-candidates nil))
     (pcase-dolist (`(,candidate ,prefix ,suffix) candidates)
       (setq quick-letters (corfu-quick--letters))
