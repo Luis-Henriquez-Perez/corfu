@@ -67,6 +67,9 @@
 (defvar-local corfu-quick--list nil)
 (defvar-local corfu-quick--first nil)
 
+(defun corfu-quick--letters ()
+  "Return")
+
 ;; Is it possible to use `avy' for this?
 ;; In theory I can just prepend the letters to the candidates.
 (defun corfu-quick--format-candidate (orig cands)
