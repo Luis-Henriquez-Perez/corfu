@@ -78,11 +78,13 @@
 (defun corfu-quick--format-candidate (orig candidates)
   "Format candidate, see `corfu--format-candidate' for arguments."
   ;; Candidates are of the form ((candidate1 prefix1 suffix1)...).
-  (let ((updated-candidates))
+  (let ((updated-candidates)
+	(quick-letter-index 0))
     (dolist (candidate candidates)
       ;; Update the prefix.
       (setf (nth 1 candidate) (concat quick-letter " " (nth 1 candidate)))
-      (push candidate updated-candidates))
+      (push candidate updated-candidates)
+      (cl-incf quicl-letter-index))
     (cl-callf reverse updated-candidates)
     (apply orig updated-candidates)))
 
