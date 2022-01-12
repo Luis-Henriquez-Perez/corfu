@@ -116,10 +116,12 @@
   (cl-letf (((symbol-function #'corfu--format-candidate)
              (apply-partially #'corfu-quick--format-candidate
                               (symbol-function #'corfu--format-candidate))))
+    (alist-get (read-key) corfu-quick--list)
     (if (zerop corfu--total)
 	(and (message "No match") nil)
-      )
-    (alist-get (read-key) corfu-quick--list)))
+      (let ((idx (vertico-quick--read)))
+	(when (consp idx) (setq idx (vertico-quick--read (car idx))))
+	(when idx (setq vertico--index idx))))))
 
 ;; (defun corfu-quick--read ()
 ;;   "Read quick key given FIRST pressed key."
