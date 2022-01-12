@@ -78,6 +78,7 @@
 (defun corfu-quick--format-candidate (orig candidates)
   "Format candidate, see `corfu--format-candidate' for arguments."
   ;; Candidates are a nested list of string triples.
+  (seq-map `(lambda ()))
   (let ((updated-candidates))
     (dolist (candidate candidates)
       (push ())
