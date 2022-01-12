@@ -104,11 +104,11 @@
   "Format candidate, see `corfu--format-candidate' for arguments."
   ;; Candidates are of the form ((candidate1 prefix1 suffix1)...).
   (let ((updated-candidates nil))
-    (dolist (candidate candidates)
+    (pcase-dolist (`(,candidate ,prefix ,suffix) candidates)
       ;; Update the prefix.
       (setq quick-letters (corfu-quick--letters))
-      (setf (nth 1 candidate) (concat quick-letters " " (nth 1 candidate)))
-      (push candidate updated-candidates))
+      (setq prefix (concat quick-letters " " prefix))
+      (push (list candidate prefix suffix) updated-candidates))
     (cl-callf reverse updated-candidates)
     (apply orig updated-candidates)))
 
