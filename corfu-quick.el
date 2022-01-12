@@ -82,7 +82,8 @@
 	  (push (reverse c-result) cands-result)))
       (apply orig (reverse cands-result)))))
 
-(defun corfu--quick-jump ())
+(defun corfu--quick-jump ()
+  "")
 
 ;; (defun corfu-quick--read ()
 ;;   "Read quick key given FIRST pressed key."
