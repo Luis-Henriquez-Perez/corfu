@@ -83,7 +83,7 @@
       (apply orig (reverse cands-result)))))
 
 ;;;###autoload
-(defun corfu--quick-jump ()
+(defun corfu-quick-jump ()
   "Jump to candidate using quick-keys."
   (cl-letf (((symbol-function #'corfu--format-candidate)
              (apply-partially #'corfu-quick--format-candidate
