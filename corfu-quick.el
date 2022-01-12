@@ -73,7 +73,8 @@
 	(propertize (char-to-string key2))))
 
 ;; Is it possible to use `avy' for this?
-;; In theory I can just prepend the letters to the candidates.
+;; In theory I can just prepend the letters to the candidates and then
+;; `corfu--format-candidates' will take care of the rest.
 (defun corfu-quick--format-candidate (orig cands)
   "Format candidate, see `corfu--format-candidate' for arguments."
   (let ((updated-cands)
