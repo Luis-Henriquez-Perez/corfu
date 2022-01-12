@@ -107,7 +107,7 @@
     (pcase-dolist (`(,candidate ,prefix ,suffix) candidates)
       ;; Update the prefix.
       (setq quick-letters (corfu-quick--letters))
-      (message "prefix-> %S" prefix)
+      (message "prefix-> %S" quick-letters)
       (push (list candidate prefix suffix) updated-candidates))
     (cl-callf reverse updated-candidates)
     (funcall orig updated-candidates)))
