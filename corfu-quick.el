@@ -116,6 +116,8 @@
   (cl-letf (((symbol-function #'corfu--format-candidate)
              (apply-partially #'corfu-quick--format-candidate
                               (symbol-function #'corfu--format-candidate))))
+    (if (zerop corfu--total)
+	(message "No match"))
     (alist-get (read-key) corfu-quick--list)))
 
 ;; (defun corfu-quick--read ()
