@@ -74,11 +74,11 @@
   (let* ((l (length corfu-quick1))
          (snd (length corfu-quick2))
          (len (+ fst snd)))
-    (let (collect1)
+    (let (cands-result)
       (dolist (c cands)
-	(let (collect2)
-	  (dolist (s c))
-	  (push ))))))
+	(let (c-result)
+	  (dolist (string c))
+	  (push (concat letter " " string) c-result))))))
 
 ;; (defun corfu-quick--read ()
 ;;   "Read quick key given FIRST pressed key."
