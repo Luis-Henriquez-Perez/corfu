@@ -76,7 +76,7 @@
          (len (+ fst snd)))
     (cl-loop for c in cands collect
 	     (cl-loop for s in c collect
-		      (concat )))))
+		      (concat (propertize ))))))
 
 ;; (defun corfu-quick--read ()
 ;;   "Read quick key given FIRST pressed key."
