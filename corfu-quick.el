@@ -101,10 +101,7 @@
   (let ((updated-candidates nil)
 	(quick-letter-index 0)
 	(quick-letters nil))
-    (cl-mapcar (lambda (candidate quick-letters))
-	       candidates
-	       (quick-letters )
-	       )
+    (cl-mapcar (lambda (candidate quick-letters)) candidates quick-letters)
     (dolist (candidate candidates)
       ;; Update the prefix.
       (setq quick-letters (corfu-quick--letters quick-letter-index))
