@@ -113,14 +113,12 @@
 (defun corfu-quick-jump ()
   "Jump to candidate using quick-keys."
   (interactive)
-  (cl-letf* ((old-fn (symbol-function #'corfu--format-candidate))
-	     (new-fn (apply-partially #'corfu-quick--format-candidate old-fn))
-	     ((symbol-function #'corfu--format-candidate) new-fn))
-    (if (zerop corfu--total)
-	(and (message "No match") nil)
-      (let ((idx (corfu-quick--read)))
-	(when (consp idx) (setq idx (corfu-quick--read (car idx))))
-	(when idx (setq corfu--index idx))))))
+  (if (zerop corfu--total)
+      (and (message "No match") nil)
+    (let ((idx (corfu-quick--read)))
+      (when (consp idx) (setq idx (corfu-quick--read (car idx))))
+      (when idx (setq corfu--index idx))))
+  )
 
 ;; (defun corfu-quick--read ()
 ;;   "Read quick key given FIRST pressed key."
