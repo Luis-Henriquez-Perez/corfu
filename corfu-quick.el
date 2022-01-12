@@ -82,7 +82,7 @@
 	(quick-letters)
 	(quick-keys1)
 	(quick-keys2))
-    (pcase-dolist (`(,prefix ) candidates)
+    (pcase-dolist (`(,candidate ,suffix ,prefix) candidates)
       ())
     (apply orig (reverse updated-cands))))
 
