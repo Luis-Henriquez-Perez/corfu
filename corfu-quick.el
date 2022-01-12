@@ -114,9 +114,9 @@
 
 (defun corfu-quick--read ()
   "Read quick key given FIRST pressed key."
-  (cl-letf* ((old-fn (symbol-function #'corfu--format-candidate))
+  (cl-letf* ((old-fn (symbol-function #'corfu--format-candidates))
 	     (new-fn (apply-partially #'corfu-quick--format-candidates old-fn))
-	     ((symbol-function #'corfu--format-candidate) new-fn))
+	     ((symbol-function #'corfu--format-candidates) new-fn))
     (corfu--update)
     1
     ;; (alist-get (read-key) corfu-quick--list)
