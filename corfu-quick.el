@@ -119,9 +119,9 @@
     (alist-get (read-key) corfu-quick--list)
     (if (zerop corfu--total)
 	(and (message "No match") nil)
-      (let ((idx (vertico-quick--read)))
-	(when (consp idx) (setq idx (vertico-quick--read (car idx))))
-	(when idx (setq vertico--index idx))))))
+      (let ((idx (corfu-quick--read)))
+	(when (consp idx) (setq idx (corfu-quick--read (car idx))))
+	(when idx (setq corfu--index idx))))))
 
 ;; (defun corfu-quick--read ()
 ;;   "Read quick key given FIRST pressed key."
