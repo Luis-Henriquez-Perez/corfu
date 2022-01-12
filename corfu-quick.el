@@ -69,7 +69,6 @@
 
 (defun corfu-quick--letters (start)
   "Return string of propertized quick keys."
-  (let ())
   (list (propertize (char-to-string key1))
 	(propertize (char-to-string key2))))
 
