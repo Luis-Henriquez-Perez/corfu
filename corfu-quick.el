@@ -64,8 +64,8 @@
   "Face used for the second quick key."
   :group 'corfu-faces)
 
-(defvar-local corfu-quick--list nil)
-(defvar-local corfu-quick--first nil)
+;; (defvar-local corfu-quick--list nil)
+;; (defvar-local corfu-quick--first nil)
 
 (defun corfu-quick--letters ()
   "Return string of propertized quick keys."
@@ -114,9 +114,7 @@
   "Jump to candidate using quick-keys."
   (cl-letf (((symbol-function #'corfu--format-candidate)
              (apply-partially #'corfu-quick--format-candidate
-                              (symbol-function #'corfu--format-candidate)))
-            (corfu-quick--first first)
-            (corfu-quick--list))
+                              (symbol-function #'corfu--format-candidate))))
     (alist-get (read-key) corfu-quick--list)))
 
 ;; (defun corfu-quick--read ()
