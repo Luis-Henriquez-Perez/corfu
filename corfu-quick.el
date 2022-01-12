@@ -76,7 +76,8 @@
 (defun corfu-quick--format-candidate (orig cands)
   "Format candidate, see `corfu--format-candidate' for arguments."
   (let ((updated-cands)
-	(quick-letters))
+	(quick-letters)
+	())
     (dolist (c cands)
       (let (c-result)
 	(dolist (s c)
