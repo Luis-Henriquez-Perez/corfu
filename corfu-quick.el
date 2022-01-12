@@ -80,7 +80,8 @@
 	  (dolist (s c)
 	    (push (concat letter " " s) c-result))
 	  (push (reverse c-result) cands-result)))
-      (apply orig (reverse cands-result)))))
+      (setq cands-result (reverse cands-result))
+      (apply orig cands-result))))
 
 ;;;###autoload
 (defun corfu-quick-jump ()
