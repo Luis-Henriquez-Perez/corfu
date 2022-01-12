@@ -117,6 +117,7 @@
   (cl-letf* ((old-fn (symbol-function #'corfu--format-candidate))
 	     (new-fn (apply-partially #'corfu-quick--format-candidate old-fn))
 	     ((symbol-function #'corfu--format-candidate) new-fn))
+    (corfu--update)
     0
     ;; (alist-get (read-key) corfu-quick--list)
     ))
