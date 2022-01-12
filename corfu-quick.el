@@ -78,12 +78,9 @@
 (defun corfu-quick--format-candidate (orig candidates)
   "Format candidate, see `corfu--format-candidate' for arguments."
   ;; Candidates are a nested list of string triples.
-  (let ((updated-cands)
-	(quick-letters)
-	(quick-keys1)
-	(quick-keys2))
+  (let ((updated-candidates))
     (pcase-dolist (`(,candidate ,suffix ,prefix) candidates)
-      ())
+      (push (concat candidate) updated-candidates))
     (apply orig (reverse updated-cands))))
 
 ;;;###autoload
