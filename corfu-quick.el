@@ -69,7 +69,9 @@
 
 (defun corfu-quick--letters (start)
   "Return string of propertized quick keys."
-  (let ()))
+  (let ())
+  (list (propertize (char-to-string key1))
+	(propertize (char-to-string key2))))
 
 ;; Is it possible to use `avy' for this?
 ;; In theory I can just prepend the letters to the candidates.
