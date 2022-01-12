@@ -77,8 +77,8 @@
     (let (cands-result)
       (dolist (c cands)
 	(let (c-result)
-	  (dolist (string c)
-	    (push (concat letter " " string) c-result))
+	  (dolist (s c)
+	    (push (concat letter " " s) c-result))
 	  (push (reverse c-result) cands-result))))))
 
 ;; (defun corfu-quick--read ()
