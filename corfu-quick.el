@@ -78,8 +78,7 @@
 	(dolist (s c)
 	  (push (concat quick-letters " " s) c-result))
 	(push (reverse c-result) updated-cands)))
-    (setq updated-cands (reverse updated-cands))
-    (apply orig updated-cands)))
+    (apply orig (reverse updated-cands))))
 
 ;;;###autoload
 (defun corfu-quick-jump ()
