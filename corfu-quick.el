@@ -70,7 +70,7 @@
 
 (defun corfu-quick--letters ()
   "Return string of propertized quick keys."
-  (propertize (char-to-string (seq-first corfu-quick1)))
+  (concat "" (propertize (char-to-string (seq-first corfu-quick1)) 'face 'corfu-quick1))
   ;; (let* ((fst (length corfu-quick1))
   ;;        (snd (length corfu-quick2))
   ;;        (len (+ fst snd))
