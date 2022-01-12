@@ -105,7 +105,8 @@
   (let ((updated-candidates nil))
     (pcase-dolist (`(,candidate ,prefix ,suffix) candidates)
       (setq quick-letters (corfu-quick--letters))
-      ;; (callf2 concat quick-letters prefix "\s")
+      (setf prefix
+	    (concat quick-letters prefix " "))
       (push (list candidate prefix suffix) updated-candidates))
     (cl-callf reverse updated-candidates)
     (funcall orig updated-candidates)))
