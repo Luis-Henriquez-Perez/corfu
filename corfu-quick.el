@@ -80,10 +80,9 @@
   ;; Candidates are a nested list of string triples.
   (let ((updated-candidates))
     (dolist (candidate candidates)
-      (setq prefix (concat quick-letter " " prefix))
-      (push (list candidate ))
-      (push () updated-candidates))
-    (apply orig (nreverse updated-cands))))
+      (setf (nth 1 candidate) (concat quick-letter " " prefix))
+      (push candidate updated-candidates))
+    (apply orig (nreverse updated-candidates))))
 
 ;;;###autoload
 (defun corfu-quick-jump ()
