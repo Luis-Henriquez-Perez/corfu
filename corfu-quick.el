@@ -71,17 +71,15 @@
 ;; In theory I can just prepend the letters to the candidates.
 (defun corfu-quick--format-candidate (orig cands)
   "Format candidate, see `corfu--format-candidate' for arguments."
-  (let* ((l (length corfu-quick1))
-         (snd (length corfu-quick2))
-         (len (+ fst snd)))
-    (let (cands-result)
-      (dolist (c cands)
-	(let (c-result)
-	  (dolist (s c)
-	    (push (concat letter " " s) c-result))
-	  (push (reverse c-result) cands-result)))
-      (setq cands-result (reverse cands-result))
-      (apply orig cands-result))))
+  (let ((updated-cands)
+	(quick-letters ()))
+    (dolist (c cands)
+      (let (c-result)
+	(dolist (s c)
+	  (push (concat quick-letters " " s) c-result))
+	(push (reverse c-result) updated-cands)))
+    (setq updated-cands (reverse updated-cands))
+    (apply orig updated-cands)))
 
 ;;;###autoload
 (defun corfu-quick-jump ()
