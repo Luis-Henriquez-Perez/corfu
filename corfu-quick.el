@@ -84,7 +84,7 @@
       ;; Update the prefix.
       (setf (nth 1 candidate) (concat quick-letter " " (nth 1 candidate)))
       (push candidate updated-candidates)
-      (cl-incf quicl-letter-index))
+      (cl-incf quick-letter-index))
     (cl-callf reverse updated-candidates)
     (apply orig updated-candidates)))
 
