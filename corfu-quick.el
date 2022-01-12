@@ -98,10 +98,10 @@
 (defun corfu-quick--format-candidates (orig candidates)
   "Format candidate, see `corfu--format-candidate' for arguments."
   ;; Candidates are of the form ((candidate1 prefix1 suffix1)...).
+  (cl-mapcar (lambda (candidate quick-letters)) candidates quick-letters)
   (let ((updated-candidates nil)
 	(quick-letter-index 0)
 	(quick-letters nil))
-    (cl-mapcar (lambda (candidate quick-letters)) candidates quick-letters)
     (dolist (candidate candidates)
       ;; Update the prefix.
       (setq quick-letters (corfu-quick--letters quick-letter-index))
