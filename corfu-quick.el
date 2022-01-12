@@ -74,11 +74,7 @@
   (let* ((l (length corfu-quick1))
          (snd (length corfu-quick2))
          (len (+ fst snd)))
-    (let (result)
-      (dolist (c cands)
-	(dolist (s c)
-	  (push )))
-      (apply orig-fn (reverse result)))))
+    (cl-loop)))
 
 ;; (defun corfu-quick--read ()
 ;;   "Read quick key given FIRST pressed key."
