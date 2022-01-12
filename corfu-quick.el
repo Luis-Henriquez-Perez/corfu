@@ -77,7 +77,7 @@
 ;; `corfu--format-candidates' will take care of the rest.
 (defun corfu-quick--format-candidate (orig candidates)
   "Format candidate, see `corfu--format-candidate' for arguments."
-  ;; Candidates are a nested list of string triples.
+  ;; Candidates are of the form ((candidate1 prefix1 suffix1)...).
   (let ((updated-candidates))
     (dolist (candidate candidates)
       ;; Update the prefix.
