@@ -83,7 +83,8 @@
       (apply orig (reverse cands-result)))))
 
 (defun corfu--quick-jump ()
-  "Jump to candidate using quick-keys.")
+  "Jump to candidate using quick-keys."
+  (cl-letf (())))
 
 ;; (defun corfu-quick--read ()
 ;;   "Read quick key given FIRST pressed key."
