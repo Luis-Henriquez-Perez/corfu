@@ -77,7 +77,8 @@
   "Format candidate, see `corfu--format-candidate' for arguments."
   (let ((updated-cands)
 	(quick-letters)
-	())
+	(quick-keys1 )
+	(quick-keys2 ))
     (dolist (c cands)
       (let (c-result)
 	(dolist (s c)
