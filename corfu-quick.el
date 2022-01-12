@@ -105,7 +105,6 @@
   (message "HOO")
   (let ((updated-candidates nil))
     (pcase-dolist (`(,candidate ,prefix ,suffix) candidates)
-      ;; Update the prefix.
       (setq quick-letters (corfu-quick--letters))
       (callf2 concat quick-letters prefix "\s")
       (push (list candidate prefix suffix) updated-candidates))
